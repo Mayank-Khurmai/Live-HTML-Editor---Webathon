@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live HTML Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+      *{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.body-div{
+    width: 100%;
+    height: 100vh;
+}
+header{
+    width: 100%;
+    height: 10%;
+    padding: 20px;
+    background-color: darkseagreen;
+}
+
+h1{
+    text-align: center;
+    margin: 0px;
+}
+
+#span-one{
+    color: red;
+}
+
+section{
+    width: 100%;
+    height: 80%;
+}
+
+.lr-div{
+    width: 50%;
+    height: 100%;
+    border: 5px solid black;
+    float: left;
+}
+
+.lr-div-header{
+    width: 100%;
+    height: 5%;
+    background-color: black
+}
+
+.lr-div-header-text{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    color: white;
+}
+.lr-div-input{
+    margin: 2%;
+    height: 90%;
+    width: 95%;
+    padding: 10px;
+    outline: none;
+    resize: none;
+    border: 2px solid gainsboro;
+}
+.lr-div-output{
+    margin: 2%;
+    height: 90%;
+    width: 95%;
+    border: 2px solid gainsboro;
+    overflow-y: scroll;
+}
+footer{
+    width: 100%;
+    height: 10%;
+    background-color: darkseagreen;
+}
+
+#span-two{
+    padding: 5px;
+    width: 110px;
+    margin: 0 auto;
+}
+
+@media(max-width:670px){
+    .lr-div{
+        width: 100%;
+        height: 50%;
+        border: 2px solid black;
+        float: left;
+        clear: left;
+    }
+    .lr-div-header-text{
+        padding: 0px;
+        margin: 0px;
+        font-size: 10px;
+        text-align: center;
+        color: white;
+    }
+}
+    </style>
+  </head>
+  <body>
+
+<div class="body-div">
+  <header>
+            <h1>Live <span id="span-one">HTML</span> Editor</h1>
+  </header>
+
+  <section>
+        <div class="lr-div">
+          <div class="lr-div-header">
+                <h2 class="lr-div-header-text">INPUT CODE</h2>
+          </div>
+          <textarea class="lr-div-input" id="code" oninput="run()">
+<!--Write Your Code Here-->
+          </textarea>
+        </div>
+
+        <div class="lr-div">
+          <div class="lr-div-header">
+               <h2 class="lr-div-header-text">OUTPUT RESULT</h2>
+          </div>
+          <div class="lr-div-output" id="output">
+          </div>
+        </div>
+
+  </section>
+
+  
+  <footer>
+      <div id="span-two">
+        <i class="fa fa-facebook-f" style="font-size:40px;"></i>
+        <i class="fa fa-github" style="font-size:40px;"></i>
+        <i class="	fa fa-linkedin-square" style="font-size:40px;"></i>
+      </div>
+  </footer>
+
+</div>
+
+
+<script>
+
+  function run()
+  {
+    var input = document.getElementById("code").value;
+    var output = document.getElementById("output");
+    output.innerHTML = input;
+  }
+</script>
+
+  </body>
+</html>
